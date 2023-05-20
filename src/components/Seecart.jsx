@@ -1,23 +1,26 @@
 import React from 'react';
 
-const SeeCart = ({ cartItems, onRemoveFromCart }) => {
+export default function SeeCart({ products, removeFromCart }) {
+  if (!products || products.length === 0) {
+    return <p>No products available.</p>;
+  }
+
+  const handleRemove = (productId) => {
+    removeFromCart(productId);
+  };
+
   return (
     <div>
-      <h2>Current Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <ul>
-          {cartItems.map((item) => (
-            <li key={item.id}>
-              {item.name}{' '}
-              <button onClick={() => onRemoveFromCart(item)}>Remove</button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <h1>Cart</h1>
+      {products.map((product) => (
+        <div key={product.id}>
+          <h2>{product.name}</h2>
+          <p>{product.price}</p>
+          <button onClick={() => handleRemove(product.id)}>Remove</button>
+        </div>
+      ))}
     </div>
   );
-};
+}
 
 

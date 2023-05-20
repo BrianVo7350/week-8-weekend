@@ -1,6 +1,12 @@
 import React from 'react';
 
-const Products = ({ products, onAddToCart }) => {
+export default function Products({ products, onAddToCart }) {
+  if (!products || products.length === 0) {
+    return <p>No products available.</p>;
+  }
+
+
+
   return (
     <div>
       <h1>Products</h1>
@@ -9,6 +15,10 @@ const Products = ({ products, onAddToCart }) => {
       ))}
     </div>
   );
+}
+
+const product1 = {
+  id : 1,
+  name : 'iphone',
+  price : 1000
 };
-
-

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
-// import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Login from './views/Login'
 import Signup from './views/Signup'
 // import Home from '/.views/Home'
-import Products from '/.components/Products'
-import Seecart from '/.components/Seecart'
+import Products from './components/Products'
+import Seecart from './components/Seecart'
 
 
 
