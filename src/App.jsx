@@ -8,6 +8,7 @@ import Products from './components/Products'
 import Seecart from './components/Seecart'
 
 
+const STRIPE_API_KEY = 'sk_test_51LaSpGAOPmNTqh49ym0T8zsBS31YhIt9tXSPkODHp50B2iUSTYs98TOG59hQFGWZYg884LqQKhdhE9pnAQ75V0UF00hit063Z6'
 
 export default function App () {
 

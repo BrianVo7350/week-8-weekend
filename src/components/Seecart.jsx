@@ -1,8 +1,8 @@
 import React from 'react';
 
 export default function SeeCart({ products, removeFromCart }) {
-  if (!products || products.length === 0) {
-    return <p>No products available.</p>;
+  if (!products) {
+    return <p>You don't have anything in your cart</p>;
   }
 
   const handleRemove = (productId) => {
