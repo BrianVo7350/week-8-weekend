@@ -5,17 +5,17 @@ import Login from './views/Login'
 import Signup from './views/Signup'
 // import Home from '/.views/Home'
 import Products from './components/Products'
-import Seecart from './components/Seecart'
-
-
-const STRIPE_API_KEY = 'sk_test_51LaSpGAOPmNTqh49ym0T8zsBS31YhIt9tXSPkODHp50B2iUSTYs98TOG59hQFGWZYg884LqQKhdhE9pnAQ75V0UF00hit063Z6'
+import Cart from './components/Cart'
+import Getproduct from './components/Getproduct'
 
 export default function App () {
 
-  const [user, setUser] = useState({})
+  const [user, setUser,] = useState({})
+  const [cart, setCart] = useState([]);
+
 
   const logMeIn = (user) => {
-    setUser(user)
+    setUser({user: user})
   };
   const logMeOut = () => {
     setUser({})
@@ -29,7 +29,8 @@ export default function App () {
             <Route path='/Login' element={<Login logMeIn={logMeIn} user={user}/>} />
             <Route path='/Signup' element={<Signup />} />
             <Route path='/Products' element={<Products />}/>
-            <Route path='/Seecart' element={<Seecart />}/>
+            <Route path='/Cart' element={<Cart />}/>
+            <Route path='/Getproduct' element={<Getproduct/>}/>
           </Routes>
         </div>
     )

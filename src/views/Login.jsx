@@ -6,7 +6,8 @@ export default function Login({LogMeIn}) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const username = e.target.username.value;
+        const email = e.target.email.value;
+        const first_name = e.target.fist_name.value;
         const password = e.target.password.value;
 
 
@@ -14,8 +15,14 @@ export default function Login({LogMeIn}) {
         const options = {
             method: "POST",
             headers: {
-                Authorization: `Basic ${btoa(username+":"+password)}`
-            }
+              // 'Content-Type': 'application/json'
+                Authorization: `Basic ${btoa(first_name+":"+password)}`
+            },
+            body: JSON.stringify({
+              first_name : first_name,
+              password: password
+          })
+           
         };
 
         const res = await fetch(url, options);
@@ -28,17 +35,17 @@ export default function Login({LogMeIn}) {
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+          <input type="text" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+          <div id="emailHelp" className="form-text">We'll never share your username with anyone else.</div>
         </div>
         <div className="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" />
+          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+          <input type="password" name="password" className="form-control" id="exampleInputPassword1" />
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" className="btn btn-primary">Login</button>
       </form>
     )
   }
