@@ -14,8 +14,8 @@ export default function Cart({ products, setCart, removeFromCart, removeFromCart
   };
   
 // This does not work fix it psuedo code
-  const handleRemoveAll = (productId) => {
-    removeFromCartAll(setCart)
+  const handleRemoveAll = () => {
+    removeFromCartAll();
   };
 
 
@@ -29,7 +29,7 @@ export default function Cart({ products, setCart, removeFromCart, removeFromCart
           <h2>{product.name}</h2>
           <h2>{product.description}</h2>
           <button onClick={() => handleRemove(product.id)}>Remove</button>
-          <button onClick={() => handleRemoveAll(product.id)}>Remove</button>
+          <button onClick={() => handleRemoveAll}>Remove</button>
         </div>
       ))}
       <form action={BACK_END_URL+ '/checkout'} method='POST'>
