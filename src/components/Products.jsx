@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import Seecart from './Cart';
-import Moreinfo from './Getproduct';
+// import Seecart from './Cart';
+// import Moreinfo from './Getproduct';
 import { Link } from 'react-router-dom';
 
 const STRIPE_API_KEY = 'sk_test_51N5zTXLYz2wopO9ltEEsHAsZUP8hDbwgzZg984K7URS1vWLYBatX1IdxlxXNoTkr6BU6u9qHeB4KuXJ0chxBKGIg00kA2L4hqN'
@@ -13,8 +13,9 @@ const ProductCard = ({ productInfo, addToCart }) => {
       <div className="card-body">
         <h5 className="card-title">{p.name}</h5>
         <p className="card-text">{p.description}</p>
-        <button className="btn btn-primary" onClick={() => { addToCart(p) }}>Add to Cart</button>
-        <a className="Moreinfo" to="/Moreinfo">Info</a>
+        <button className="btn btn-primary" onClick={() =>  {addToCart(p) }}>Add to Cart</button>
+        {/* <a className="Getproduct" to="/Getproduct">Info</a> */}
+        <Link className="Singleproduct" aria-current="page" to="/Singleproduct">Info</Link>
       </div>
     </div>
   )
@@ -25,7 +26,7 @@ export default function Products() {
   const [user, setUser] = useState({})
   const [cart, setCart] = useState([])
 
-  const addToCart = () => {
+  const addToCart = (products) => {
     setCart ([...cart, products]);
   };
  
@@ -63,9 +64,17 @@ export default function Products() {
           {showProducts()}
         </div>
       </div>
+      <form action= {BACK_END_URL + "/checkout"} method="POST">
+        <button className="btn btn-success">CHECKOUT</button>
+      </form>
     </div>
+    
   )
 };
+
+
+
+
 
 
 

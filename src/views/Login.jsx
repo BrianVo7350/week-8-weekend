@@ -7,27 +7,25 @@ export default function Login({LogMeIn}) {
         e.preventDefault();
 
         const email = e.target.email.value;
-        const first_name = e.target.fist_name.value;
         const password = e.target.password.value;
-
+        console.log(email, password)
 
         const url = 'http://127.0.0.1:5000/api/Login';
         const options = {
             method: "POST",
             headers: {
-              // 'Content-Type': 'application/json'
-                Authorization: `Basic ${btoa(first_name+":"+password)}`
+              'Content-Type': 'application/json',
+              Authorization: `Basic ${btoa(email+":"+password)}`
             },
             body: JSON.stringify({
-              first_name : first_name,
+              email : email,
               password: password
           })
-           
         };
-
         const res = await fetch(url, options);
         const data = await res.json();
         if (data.status === 'ok'){
+          console.log(data)
             const myUserInfo = data.data
             LogMeIn(myUserInfo)
         }
@@ -39,7 +37,7 @@ export default function Login({LogMeIn}) {
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
           <input type="text" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          <div id="emailHelp" className="form-text">We'll never share your username with anyone else.</div>
+          <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">Password</label>

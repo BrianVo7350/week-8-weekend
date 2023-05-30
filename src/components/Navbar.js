@@ -13,7 +13,7 @@ export default class navbar extends Component {
                         <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                     </li>
                     {
-                            this.props.user.apitoken ? //if logged in 
+                            this.props.user.apitoken? //if logged in 
                                 (
                                     <>
                                         <li className="nav-item">
@@ -39,12 +39,12 @@ export default class navbar extends Component {
                                         <li className="nav-item">
                                             <Link className="nav-link" to="/signup">Sign Up</Link>
                                         </li>
-                                        <li className="nav-item">
+                                        {/* <li className="nav-item">
                                             <Link className="nav-link" to="/cart">Current Cart</Link>
                                         </li>
                                         <li className="nav-item">
                                             <Link className="nav-link" to="/products">Products</Link>
-                                        </li>
+                                        </li> */}
                                     </>
                                 )
                     }

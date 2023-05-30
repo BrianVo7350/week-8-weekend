@@ -1,9 +1,10 @@
 import React from 'react'
 import Products from './Products';
 
-export default function Getproduct() {
+export default function Singleproduct() {
   const ProductCard = ({ productInfo, addToCart }) => {
     const p = productInfo
+
     return (
       <div className="card" style={{ width: '18rem' }}>
         <div className="card-body">
@@ -16,5 +17,3 @@ export default function Getproduct() {
   };
  
 }
-
-  

@@ -6,7 +6,7 @@ import Signup from './views/Signup'
 // import Home from '/.views/Home'
 import Products from './components/Products'
 import Cart from './components/Cart'
-import Getproduct from './components/Getproduct'
+import Singleproduct from './components/Singleproduct'
 
 export default function App () {
 
@@ -15,12 +15,14 @@ export default function App () {
 
 
   const logMeIn = (user) => {
-    setUser({user: user})
+    setUser({user})
+    localStorage.setItem("Brian user", JSON.stringfy(user))
   };
   const logMeOut = () => {
     setUser({})
+    localStorage.removeItem("Brian user")
   };
-  
+  //Functional comps instead of class
     return (
         <div>
           <Navbar user={user} logMeOut={logMeOut}/>
@@ -30,7 +32,7 @@ export default function App () {
             <Route path='/Signup' element={<Signup />} />
             <Route path='/Products' element={<Products />}/>
             <Route path='/Cart' element={<Cart />}/>
-            <Route path='/Getproduct' element={<Getproduct/>}/>
+            <Route path='/Singleproduct' element={<Singleproduct/>}/>
           </Routes>
         </div>
     )
