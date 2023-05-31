@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
-export default function Login({LogMeIn}) {
+export default function Login({logMeIn}) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,14 +24,14 @@ export default function Login({LogMeIn}) {
         };
         const res = await fetch(url, options);
         const data = await res.json();
+        console.log(res)
+        console.log(data)
         if (data.status === 'ok'){
           console.log(data)
             const myUserInfo = data.data
-            LogMeIn(myUserInfo)
+            logMeIn(myUserInfo)
         }
-
-    }
-
+      }
     return (
         <form onSubmit={handleSubmit}>
         <div className="mb-3">

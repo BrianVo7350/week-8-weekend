@@ -47,11 +47,11 @@ export default function SignUp() {
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputusername1" className="form-label">First Name</label>
-          <input type="text" name = "first_name" className="form-control" id="exampleInputusername1"/>
+          <input type="text" name = "first_name" className="form-control" id="exampleInputfirstname1"/>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputusername1" className="form-label">Last Name</label>
-          <input type="text" name = "last_name" className="form-control" id="exampleInputusername1"/>
+          <input type="text" name = "last_name" className="form-control" id="exampleInputlastname1"/>
         </div>
         <div className="mb-3">
           <label htmlFor="exampleInputPassword1" className="form-label">Password</label>

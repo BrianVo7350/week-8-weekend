@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import Products from './Products'
+
 
 const STRIPE_API_KEY = 'sk_test_51N5zTXLYz2wopO9ltEEsHAsZUP8hDbwgzZg984K7URS1vWLYBatX1IdxlxXNoTkr6BU6u9qHeB4KuXJ0chxBKGIg00kA2L4hqN'
 const BACK_END_URL = process.env.REACT_APP_BACK_END_URL
@@ -17,8 +17,6 @@ export default function Cart({ products, setCart, removeFromCart, removeFromCart
   const handleRemoveAll = () => {
     removeFromCartAll();
   };
-
-
 
   
   return (
