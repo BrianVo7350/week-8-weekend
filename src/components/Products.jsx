@@ -73,7 +73,7 @@ export default function Products({user}) {
       <div className="container">
         <div className="row">
           {showProducts()}
-            <form action= {BACK_END_URL + "/checkout"} method="POST">
+            <form action= {BACK_END_URL + "/api/checkout"} method="POST">
             <button className="btn btn-success">CHECKOUT</button>
             </form>
         </div>

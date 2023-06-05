@@ -7,13 +7,6 @@ export default function Singleproduct( {addToCart} ) {
   const [products, setProducts] = useState([])
   // const [cart, setCart] = useState([])
 
-  // Singleproduct = async () => {
-  //   const Stripe = require('stripe')
-  //   const stripe = Stripe ('sk_test_51N5zTXLYz2wopO9ltEEsHAsZUP8hDbwgzZg984K7URS1vWLYBatX1IdxlxXNoTkr6BU6u9qHeB4KuXJ0chxBKGIg00kA2L4hqN');
-
-  //   const product = await stripe.products.retrieve('prod_NwabwHZ2mQU6Fj');
-  //   setProducts(product);
-  // };
 
   const Singleproduct = async () => {
     const res = await fetch(`${BACK_END_URL}/api/Singleproduct/${product_id}`, {method:"GET"})
