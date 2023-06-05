@@ -15,12 +15,9 @@ const getuserfromlocalstorage = () => {
   }
     return {}
 };
-
 export default function App () {
 
   const [user, setUser,] = useState(getuserfromlocalstorage)
-  // const [cart, setCart] = useState([]);
-
 
   const logMeIn = (user) => {
     setUser(user)
@@ -39,9 +36,9 @@ export default function App () {
             {/* <Route path='/' element={<Home />} /> */}
             <Route path='/Login' element={<Login logMeIn={logMeIn}/>} />
             <Route path='/Signup' element={<Signup />} />
-            <Route path='/Products' element={<Products />}/>
-            <Route path='/Cart' element={<Cart />}/>
-            <Route path='/Singleproduct' element={<Singleproduct/>}/>
+            <Route path='/Products' element={<Products user={user}/>}/>
+            <Route path='/Cart' element={<Cart user={user}/>}/>
+            <Route path='/Singleproduct/:product_id' element={<Singleproduct/>}/>
           </Routes>
         </div>
     )
